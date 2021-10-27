@@ -15,7 +15,7 @@ for loop in range(2000):
         y_test_t017 = np.append(y_test_t017, y_test[loop].astype(np.uint8))
         x_test_t017 = np.append(x_test_t017, np.expand_dims(x_test[loop], 0), axis=0)
         num = num + 1
-        if num == 5:
+        if num == 20:
             break
 num = 0
 for loop in range(2000):
@@ -24,7 +24,7 @@ for loop in range(2000):
         y_test_t017 = np.append(y_test_t017, y_test[loop].astype(np.uint8))
         x_test_t017 = np.append(x_test_t017, np.expand_dims(x_test[loop], 0), axis=0)
         num = num + 1
-        if num == 5:
+        if num == 20:
             break
 
 num = 0
@@ -34,7 +34,7 @@ for loop in range(2000):
         y_test_t017 = np.append(y_test_t017, y_test[loop].astype(np.uint8))
         x_test_t017 = np.append(x_test_t017, np.expand_dims(x_test[loop], 0), axis=0)
         num = num + 1
-        if num == 5:
+        if num == 20:
             break
 
 num = 0
@@ -44,7 +44,7 @@ for loop in range(2000):
         y_test_t017 = np.append(y_test_t017, y_test[loop].astype(np.uint8))
         x_test_t017 = np.append(x_test_t017, np.expand_dims(x_test[loop], 0), axis=0)
         num = num + 1
-        if num == 5:
+        if num == 20:
             break
 
 num = 0
@@ -54,7 +54,7 @@ for loop in range(2000):
         y_test_t017 = np.append(y_test_t017, y_test[loop].astype(np.uint8))
         x_test_t017 = np.append(x_test_t017, np.expand_dims(x_test[loop], 0), axis=0)
         num = num + 1
-        if num == 5:
+        if num == 20:
             break
 
 num = 0
@@ -64,7 +64,7 @@ for loop in range(2000):
         y_test_t017 = np.append(y_test_t017, y_test[loop].astype(np.uint8))
         x_test_t017 = np.append(x_test_t017, np.expand_dims(x_test[loop], 0), axis=0)
         num = num + 1
-        if num == 5:
+        if num == 20:
             break
 
 num = 0
@@ -74,7 +74,7 @@ for loop in range(2000):
         y_test_t017 = np.append(y_test_t017, y_test[loop].astype(np.uint8))
         x_test_t017 = np.append(x_test_t017, np.expand_dims(x_test[loop], 0), axis=0)
         num = num + 1
-        if num == 5:
+        if num == 20:
             break
 
 num = 0
@@ -84,7 +84,7 @@ for loop in range(2000):
         y_test_t017 = np.append(y_test_t017, y_test[loop].astype(np.uint8))
         x_test_t017 = np.append(x_test_t017, np.expand_dims(x_test[loop], 0), axis=0)
         num = num + 1
-        if num == 5:
+        if num == 20:
             break
 
 num = 0
@@ -94,7 +94,7 @@ for loop in range(2000):
         y_test_t017 = np.append(y_test_t017, y_test[loop].astype(np.uint8))
         x_test_t017 = np.append(x_test_t017, np.expand_dims(x_test[loop], 0), axis=0)
         num = num + 1
-        if num == 5:
+        if num == 20:
             break
 
 num = 0
@@ -104,7 +104,7 @@ for loop in range(2000):
         y_test_t017 = np.append(y_test_t017, y_test[loop].astype(np.uint8))
         x_test_t017 = np.append(x_test_t017, np.expand_dims(x_test[loop], 0), axis=0)
         num = num + 1
-        if num == 5:
+        if num == 20:
             break
 
 x_test_t017 = np.delete(x_test_t017, 0, 0)
@@ -124,7 +124,7 @@ x_test_t017 = np.delete(x_test_t017, 0, 0)
 #    plt.show()
 
 print(x_test_t017[1])
-for a in range(1, 51):
+for a in range(1, 201):
     output_file = open(("img%s.sp") % (a), "w")
     # output_file = open("img1.sp","w")
     output_file.write(".PARAM mvdd=1.8\n")
