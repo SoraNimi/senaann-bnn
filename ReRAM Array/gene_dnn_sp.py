@@ -3,11 +3,11 @@ import numpy as np
 # neuron = np.sign(np.load('layer0_neuron0.npy'))
 # neuron = np.random.randint(2,size=1024)
 
-arrayR100 = np.random.normal(100, 12.5, 5000000)
+arrayR100 = np.random.normal(100, 17.5, 5000000)
 arrayR100 = np.round_(arrayR100, decimals= 5)
 print(arrayR100[0])
 num100 = 0
-arrayR53 = np.random.normal(5.3, 0.6625, 5000000)
+arrayR53 = np.random.normal(5.3, 0.9275, 5000000)
 arrayR53 = np.round_(arrayR53, decimals= 5)
 
 num53 = 0
