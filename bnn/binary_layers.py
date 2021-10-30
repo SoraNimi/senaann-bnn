@@ -107,7 +107,7 @@ class BinaryDense(Dense):
     def call(self, inputs):
         binary_kernel=binarize(self.kernel, H=self.H,)
         output = K.dot(inputs, binary_kernel)
-        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=100)
+        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=20)
         if self.use_bias:
             up_bias1=2*output+up_bias
             output = K.bias_add(output, self.bias) + up_bias * 0.25
@@ -176,7 +176,7 @@ class BinaryDense1(Dense):
     def call(self, inputs):
         binary_kernel=binarize(self.kernel, H=self.H,)
         output = K.dot(inputs, binary_kernel)
-        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=67)
+        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=13)
         if self.use_bias:
             #up_bias1=(-f1+fd1)*1000/0.3520*0.25
             #up_bias1=-f1*1000/(-0.0000000004*output*output*output+0.0000006*output*output-0.0004*output+0.3094)+fd1*1000/0.3094
@@ -248,7 +248,7 @@ class BinaryDense2(Dense):
     def call(self, inputs):
         binary_kernel=binarize(self.kernel, H=self.H,)
         output = K.dot(inputs, binary_kernel)
-        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=67)
+        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=13)
         if self.use_bias:
             # up_bias2=(-f2+fd2)*1000/0.5317*0.25
             #up_bias2=-f2*1000/(-0.0000000028*output*output*output+0.0000021*output*output-0.0008*output+0.4758)+fd2*1000/0.4758
@@ -320,7 +320,7 @@ class BinaryDense3(Dense):
     def call(self, inputs):
         binary_kernel=binarize(self.kernel, H=self.H,)
         output = K.dot(inputs, binary_kernel)
-        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=67)
+        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=13)
         if self.use_bias:
             #up_bias3 = -f3 *1000/ (-0.0000000028*output*output*output+0.0000021*output*output-0.0008*output+0.4758)+fd3*1000/0.4758
             #up_bias3=(-f3+fd3)*1000/0.5317*0.25
