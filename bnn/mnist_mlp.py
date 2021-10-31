@@ -87,8 +87,8 @@ epsilon = 1e-6
 momentum = 0.9
 
 # dropout
-drop_in = 0.2
-drop_hidden = 0.1
+drop_in = 0.1
+drop_hidden = 0.2
 
 
 start_time = datetime.datetime.now().strftime("%Y-%m-%d-%H:%M:%S");

@@ -4,6 +4,9 @@ mpl.rcParams['font.sans-serif'] = ['SimHei']
 x_axis_data = [0.025, 0.05, 0.075, 0.1, 0.2, 0.3, 0.4]
 y_axis_data = [96.3, 96, 10, 96.6, 95, 97, 96]
 
+x_axis_data = [0.025, 0.05, 0.075, 0.1, 0.125]
+y_axis_data = [96.3, 96, 10, 96.6, 98]
+
 # plot中参数的含义分别是横轴值，纵轴值，颜色，透明度和标签
 plt.plot(x_axis_data, y_axis_data, 'ro-', color='#4169E1', alpha=0.8, label='Accuracy by σRH/RL')
 
