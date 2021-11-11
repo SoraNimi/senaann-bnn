@@ -6,6 +6,7 @@ import datetime
 import numpy as np
 import keras.backend as K
 from keras.datasets import mnist
+from keras.models import load_model
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Layer, Activation, BatchNormalization
 from keras.optimizers import SGD, Adam, RMSprop
@@ -253,7 +254,7 @@ o9=[7,9,12,16,20,58,62,73,78,92]
 
 
 ############middle layer output#################
-model = np.load("weight_retrain15.npy")
+model = np.load('weight_retrain15.npy',allow_pickle=True,encoding="latin1")
 inp = model.input                                           # input placeholder
 outputs = [layer.output for layer in model.layers]          # all layer outputs
 functor = K.function([inp]+ [K.learning_phase()], outputs) # evaluation function
