@@ -176,7 +176,7 @@ class BinaryDense1(Dense):
     def call(self, inputs):
         binary_kernel=binarize(self.kernel, H=self.H,)
         output = K.dot(inputs, binary_kernel)
-        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=60)
+        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=40)
         if self.use_bias:
             #up_bias1=(-f1+fd1)*1000/0.3520*0.25
             #up_bias1=-f1*1000/(-0.0000000004*output*output*output+0.0000006*output*output-0.0004*output+0.3094)+fd1*1000/0.3094
