@@ -1,12 +1,35 @@
+# from __future__ import print_function
+# import numpy as np
+# np.random.seed(1337)  # for reproducibility
+# import h5py
+# import datetime
+# import numpy as np
+# import keras.backend as K
+# from keras.datasets import mnist
+# from keras.models import load_model
+# from keras.models import Sequential
+# from keras.layers import Dense, Dropout, Layer, Activation, BatchNormalization
+# from keras.optimizers import SGD, Adam, RMSprop
+# from keras.callbacks import LearningRateScheduler
+# from keras.utils import np_utils
+# import keras
+# import tensorflow as tf
+# import time
+#
+# from binary_ops import  binary_tanh
+# from binary_layers import BinaryDense, BinaryDense1, BinaryDense2, BinaryDense3, Clip, BinaryConv2D
+#############################################################################################
 from __future__ import print_function
 import numpy as np
+
+from d import DropoutNoScale
+
 np.random.seed(1337)  # for reproducibility
-import h5py
+
 import datetime
-import numpy as np
+
 import keras.backend as K
 from keras.datasets import mnist
-from keras.models import load_model
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Layer, Activation, BatchNormalization
 from keras.optimizers import SGD, Adam, RMSprop
@@ -16,14 +39,28 @@ import keras
 import tensorflow as tf
 import time
 
-from binary_ops import binary_tanh as binary_tanh_op
-from binary_ops import binary_tanh1
-from binary_layers import BinaryDense, BinaryDense1, BinaryDense2, BinaryDense3, Clip, BinaryConv2D
-#############################################################################################
+from binary_ops import binary_tanh as binary_tanh_op, binary_tanh
+from binary_layers import BinaryDense, Clip
+
 from keras.models import load_model
 
 
 tf.compat.v1.disable_eager_execution()
+
+class DropoutNoScale(Dropout):
+    '''Keras Dropout does scale the input in training phase, which is undesirable here.
+    '''
+    def call(self, inputs, training=None):
+        if 0. < self.rate < 1.:
+            noise_shape = self._get_noise_shape(inputs)
+
+            def dropped_inputs():
+                return K.dropout(inputs, self.rate, noise_shape,
+                                 seed=self.seed) * (1 - self.rate)
+            return K.in_train_phase(dropped_inputs, inputs,
+                                    training=training)
+        return inputs
+
 
 
 
@@ -47,8 +84,6 @@ tf.compat.v1.disable_eager_execution()
 #
 #
 #
-# def binary_tanh(x):
-#     return binary_tanh_op(x)
 #
 #
 #
@@ -95,18 +130,18 @@ tf.compat.v1.disable_eager_execution()
 # start_time = datetime.datetime.now().strftime("%Y-%m-%d-%H:%M:%S");
 #
 # # the data, shuffled and split between train and test sets
-# (X_train, y_train), (X_test, y_test) = mnist.load_data()
-#
-# X_train = X_train.reshape(60000, 784)
-# X_test = X_test.reshape(10000, 784)
-# X_train = X_train.astype('float32')
-# X_test = X_test.astype('float32')
-# X_train /= 255
-# X_test /= 255
-# X_train[X_train>0]=1
-# X_train[X_train==0]=-1
-# X_test[X_test>0]=1
-# X_test[X_test==0]=-1
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+
+X_train = X_train.reshape(60000, 784)
+X_test = X_test.reshape(10000, 784)
+X_train = X_train.astype('float32')
+X_test = X_test.astype('float32')
+X_train /= 255
+X_test /= 255
+X_train[X_train>0]=1
+X_train[X_train==0]=-1
+X_test[X_test>0]=1
+X_test[X_test==0]=-1
 # #print(X_train[0])
 # print(X_train.shape[0], 'train samples')
 # print(X_test.shape[0], 'test samples')
@@ -252,9 +287,11 @@ o9=[7,9,12,16,20,58,62,73,78,92]
 
 
 
+model = load_model('m512retrain30nol.h5', custom_objects={'DropoutNoScale': DropoutNoScale,
+                                             'BinaryDense': BinaryDense,
+                                             'Clip': Clip,
+                                             'binary_tanh': binary_tanh})
 
-############middle layer output#################
-model = np.load('weight_retrain15.npy',allow_pickle=True,encoding="latin1")
 inp = model.input                                           # input placeholder
 outputs = [layer.output for layer in model.layers]          # all layer outputs
 functor = K.function([inp]+ [K.learning_phase()], outputs) # evaluation function

@@ -8,34 +8,7 @@ from keras import initializers
 import keras
 
 
-from binary_ops import binarize
-
-# diff1=np.load('fluctuation1.npy',allow_pickle=True,encoding="latin1")
-# diff2=np.load('fluctuation2.npy',allow_pickle=True,encoding="latin1")
-# diff3=np.load('fluctuation3.npy',allow_pickle=True,encoding="latin1")
-# print(diff1.shape)
-#
-# fluctuationbl1=np.load('fluctuationbl1.npy',allow_pickle=True,encoding="latin1")
-# fluctuationbl2=np.load('fluctuationbl2.npy',allow_pickle=True,encoding="latin1")
-# fluctuationbl3=np.load('fluctuationbl3.npy',allow_pickle=True,encoding="latin1")
-#
-# fluctuationdbl1=np.load('fluctuationdbl1.npy',allow_pickle=True,encoding="latin1")
-# fluctuationdbl2=np.load('fluctuationdbl2.npy',allow_pickle=True,encoding="latin1")
-# fluctuationdbl3=np.load('fluctuationdbl3.npy',allow_pickle=True,encoding="latin1")
-#
-# f1=tf.convert_to_tensor(fluctuationbl1)
-# f2=tf.convert_to_tensor(fluctuationbl2)
-# f3=tf.convert_to_tensor(fluctuationbl3)
-# fd1=tf.convert_to_tensor(fluctuationdbl1)
-# fd2=tf.convert_to_tensor(fluctuationdbl2)
-# fd3=tf.convert_to_tensor(fluctuationdbl3)
-#
-# f1=tf.cast(f1,tf.float32)
-# f2=tf.cast(f2,tf.float32)
-# f3=tf.cast(f3,tf.float32)
-# fd1=tf.cast(fd1,tf.float32)
-# fd2=tf.cast(fd2,tf.float32)
-# fd3=tf.cast(fd3,tf.float32)
+from b import binarize
 
 class Clip(constraints.Constraint):
     def __init__(self, min_value, max_value=None):
@@ -55,8 +28,7 @@ class Clip(constraints.Constraint):
 
 
 class BinaryDense(Dense):
-    ''' Binarized De
-    nse layer
+    ''' Binarized Dense layer
     References:
     "BinaryNet: raining Deep Neural NetworksT with Weights and Activations Constrained to +1 or -1" [http://arxiv.org/abs/1602.02830]
     '''
@@ -108,10 +80,10 @@ class BinaryDense(Dense):
     def call(self, inputs):
         binary_kernel=binarize(self.kernel, H=self.H,)
         output = K.dot(inputs, binary_kernel)
-        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=60)
+        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=0)
         if self.use_bias:
             up_bias1=2*output+up_bias
-            output = K.bias_add(output, self.bias)
+            output = K.bias_add(output, self.bias)#+up_bias1
          #   print(up_bias)
         if self.activation is not None:
             output = self.activation(output)
@@ -177,12 +149,12 @@ class BinaryDense1(Dense):
     def call(self, inputs):
         binary_kernel=binarize(self.kernel, H=self.H,)
         output = K.dot(inputs, binary_kernel)
-        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=40)
+        #up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=0)
         if self.use_bias:
-            #up_bias1=(-f1+fd1)*1000/0.3520*0.25
+            up_bias1=(-f1+fd1)*1000/0.3520*0.25
             #up_bias1=-f1*1000/(-0.0000000004*output*output*output+0.0000006*output*output-0.0004*output+0.3094)+fd1*1000/0.3094
             #up_bias1 = -f1 * 1000 / (0.0000000000004 * output * output * output *output - 0.0000000004 * output * output *output+ 0.0000003*output * output - 0.0004*output+0.3172) + fd1 * 1000 / 0.3172
-            output = K.bias_add(output, self.bias)+up_bias * 0.25
+            output = K.bias_add(output, self.bias)+up_bias1
          #   print(up_bias)
         if self.activation is not None:
             output = self.activation(output)
@@ -249,12 +221,12 @@ class BinaryDense2(Dense):
     def call(self, inputs):
         binary_kernel=binarize(self.kernel, H=self.H,)
         output = K.dot(inputs, binary_kernel)
-        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=40)
+        #up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=0)
         if self.use_bias:
-            # up_bias2=(-f2+fd2)*1000/0.5317*0.25
+            up_bias2=(-f2+fd2)*1000/0.5317*0.25
             #up_bias2=-f2*1000/(-0.0000000028*output*output*output+0.0000021*output*output-0.0008*output+0.4758)+fd2*1000/0.4758
             #up_bias2 = -f2 * 1000 / (0.000000000004 * output * output * output * output - 0.0000000028 * output * output * output + 0.0000012 * output * output - 0.0008 * output + 0.4918) + fd2 * 1000 / 0.4918
-            output = K.bias_add(output, self.bias)+up_bias * 0.25
+            output = K.bias_add(output, self.bias)+up_bias2
          #   print(up_bias)
         if self.activation is not None:
             output = self.activation(output)
@@ -321,12 +293,12 @@ class BinaryDense3(Dense):
     def call(self, inputs):
         binary_kernel=binarize(self.kernel, H=self.H,)
         output = K.dot(inputs, binary_kernel)
-        up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=40)
+        #up_bias = tf.random.normal(shape=[self.units], mean=0, stddev=0)
         if self.use_bias:
             #up_bias3 = -f3 *1000/ (-0.0000000028*output*output*output+0.0000021*output*output-0.0008*output+0.4758)+fd3*1000/0.4758
-            #up_bias3=(-f3+fd3)*1000/0.5317*0.25
+            up_bias3=(-f3+fd3)*1000/0.5317*0.25
             #up_bias3 = -f3 * 1000 / (0.000000000004 * output * output * output * output - 0.0000000028 * output * output * output + 0.0000012 * output * output - 0.0008 * output + 0.4918) + fd3 * 1000 / 0.4918
-            output = K.bias_add(output, self.bias)  + up_bias * 0.25
+            output = K.bias_add(output, self.bias)  + up_bias3
          #   print(up_bias)
         if self.activation is not None:
             output = self.activation(output)
