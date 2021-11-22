@@ -127,6 +127,8 @@ t = []
 for i in range(0, 9999):
     t.append(i)
 
+
+
 print(x_test_t017[1])
 for a in range(1, 201):
     output_file = open(("img%s.sp") % (a), "w")

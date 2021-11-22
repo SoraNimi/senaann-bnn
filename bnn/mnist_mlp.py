@@ -78,8 +78,10 @@ bias_initializer = 'zeros'
 #bias_initializer=
 
 # learning rate schedule 5 6
-lr_start = 1e-3
-lr_end = 1e-4
+# lr_start = 1e-3
+# lr_end = 1e-4
+lr_start = 1e-4
+lr_end = 1e-5
 lr_decay = (lr_end / lr_start)**(1. / epochs)
 
 # BN
@@ -235,7 +237,7 @@ model.save_weights('m512retrain30nol.h5')
 #weight4=model.get_weights()[18]
 #np.save('shiyanling10500.npy',(weight1,weight2,weight3,weight4))
 weight=model.get_weights()
-np.save('../TestResult/8053/weight_retrain15.npy', weight)
+np.save('weight_retrain15.npy', weight)
 ##########################################
 o0=[3,10,13,25,28,55,69,71,101,126,136]
 o1=[2,5,14,29,31,37,39,40,46,51]
