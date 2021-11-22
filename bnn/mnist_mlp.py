@@ -78,8 +78,10 @@ bias_initializer = 'zeros'
 #bias_initializer=
 
 # learning rate schedule 5 6
-lr_start = 1e-3
-lr_end = 1e-4
+# lr_start = 1e-3
+# lr_end = 1e-4
+lr_start = 1e-4
+lr_end = 1e-5
 lr_decay = (lr_end / lr_start)**(1. / epochs)
 
 # BN

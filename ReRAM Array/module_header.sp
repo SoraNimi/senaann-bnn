@@ -3123,7 +3123,7 @@
 ** 这里的user68根据自己具体服务器修改
 .INCLUDE "/home/user68/design/rules/rohm180/spice/hspice/bu40n1.mdl"
 .INCLUDE "/home/user68/design/rules/rohm180/spice/hspice/bu40n2.mdl"
-.INCLUDE "/home/user68/DNN/img204/0flu/bu40n3.mdl"
+.INCLUDE "/home/user68/DNN/offline-training/0mv/bu40n3.mdl"
 .LIB "/home/user68/design/rules/rohm180/spice/hspice/bu40n1.skw" NT
 .LIB "/home/user68/design/rules/rohm180/spice/hspice/bu40n1.skw" PT
 
