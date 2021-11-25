@@ -35,35 +35,36 @@ if __name__ == '__main__':
     a = pd.cut(dataall, [0.652, 0.657, 0.662])
     # 计算频数
     b = a.value_counts()
-    print('bias voltage 5mv {:.2%}'.format((b[0] + b[1])/102400))
-
+    #print('bias voltage 5mv {:.2%}'.format((b[0] + b[1])/102400))
+    print('{:.2%}'.format((b[0] + b[1])/102400))
     a = pd.cut(dataall, [0.647, 0.657, 0.667]
                )
     # 计算频数
     b = a.value_counts()
-    print('bias voltage 10mv {:.2%}'.format((b[0] + b[1])/102400))
-
+    #print('bias voltage 10mv {:.2%}'.format((b[0] + b[1])/102400))
+    print('{:.2%}'.format((b[0] + b[1])/102400))
     a = pd.cut(dataall, [0.642, 0.657, 0.672]
                )
     # 计算频数
     b = a.value_counts()
-    print('bias voltage 15mv {:.2%}'.format((b[0] + b[1])/102400))
-
+    #print('bias voltage 15mv {:.2%}'.format((b[0] + b[1])/102400))
+    print('{:.2%}'.format((b[0] + b[1])/102400))
     a = pd.cut(dataall, [0.637, 0.657, 0.677]
                )
     # 计算频数
     b = a.value_counts()
-    print('bias voltage 20mv {:.2%}'.format((b[0] + b[1])/102400))
-
+    #print('bias voltage 20mv {:.2%}'.format((b[0] + b[1])/102400))
+    print('{:.2%}'.format((b[0] + b[1])/102400))
     a = pd.cut(dataall, [0.632, 0.657, 0.682]
                )
     # 计算频数
     b = a.value_counts()
-    print('bias voltage 25mv {:.2%}'.format((b[0] + b[1])/102400))
-
+    #print('bias voltage 25mv {:.2%}'.format((b[0] + b[1])/102400))
+    print('{:.2%}'.format((b[0] + b[1])/102400))
     a = pd.cut(dataall, [0.627, 0.657, 0.687]
                )
     # 计算频数
     b = a.value_counts()
-    print('bias voltage 30mv {:.2%}'.format((b[0] + b[1])/102400))
-    #deal(dataall, i)
+    #print('bias voltage 30mv {:.2%}'.format((b[0] + b[1])/102400))
+    print('{:.2%}'.format((b[0] + b[1])/102400))
+#deal(dataall, i)
