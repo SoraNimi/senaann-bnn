@@ -14,16 +14,16 @@ do
 	n=0
 	line=4
 	r=3030
-	first[1]=`cat ~/Desktop/Github/senaann-bnn/co-design/5mv/5mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1537}'`
-	first[2]=`cat ~/Desktop/Github/senaann-bnn/co-design/5mv/5mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1538}'`
-	first[3]=`cat ~/Desktop/Github/senaann-bnn/co-design/5mv/5mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1539}'`
-	first[4]=`cat ~/Desktop/Github/senaann-bnn/co-design/5mv/5mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1540}'`
-	first[5]=`cat ~/Desktop/Github/senaann-bnn/co-design/5mv/5mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1541}'`
-	first[6]=`cat ~/Desktop/Github/senaann-bnn/co-design/5mv/5mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1542}'`
-	first[7]=`cat ~/Desktop/Github/senaann-bnn/co-design/5mv/5mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1543}'`
-	first[8]=`cat ~/Desktop/Github/senaann-bnn/co-design/5mv/5mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1544}'`
-	first[9]=`cat ~/Desktop/Github/senaann-bnn/co-design/5mv/5mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1545}'`
-	first[10]=`cat ~/Desktop/Github/senaann-bnn/co-design/5mv/5mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1546}'`
+	first[1]=`cat ~/Desktop/Github/senaann-bnn/old-bnn-training/20mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1537}'`
+	first[2]=`cat ~/Desktop/Github/senaann-bnn/old-bnn-training/20mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1538}'`
+	first[3]=`cat ~/Desktop/Github/senaann-bnn/old-bnn-training/20mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1539}'`
+	first[4]=`cat ~/Desktop/Github/senaann-bnn/old-bnn-training/20mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1540}'`
+	first[5]=`cat ~/Desktop/Github/senaann-bnn/old-bnn-training/20mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1541}'`
+	first[6]=`cat ~/Desktop/Github/senaann-bnn/old-bnn-training/20mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1542}'`
+	first[7]=`cat ~/Desktop/Github/senaann-bnn/old-bnn-training/20mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1543}'`
+	first[8]=`cat ~/Desktop/Github/senaann-bnn/old-bnn-training/20mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1544}'`
+	first[9]=`cat ~/Desktop/Github/senaann-bnn/old-bnn-training/20mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1545}'`
+	first[10]=`cat ~/Desktop/Github/senaann-bnn/old-bnn-training/20mv/dnn$j.mt0|sed -n "${line}p"|awk '{print $1546}'`
 	for((i=1;i<=10;i++))
 	do
 		echo "${first[$i]}"
