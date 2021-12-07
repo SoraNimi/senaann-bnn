@@ -13,7 +13,7 @@ def deal(listStr, i):
     df = pd.DataFrame(listStr, columns=[column])
 
     # 保存到本地excel
-    IndexFile = 'old-bnn-10mv-L0'+'.xlsx'
+    IndexFile = 'codesign-5mv-L2'+'.xlsx'
     df.to_excel(IndexFile, index=False)
 
 
@@ -27,9 +27,9 @@ if __name__ == '__main__':
         strAfter = sub
         data = strAfter.split(',')
         print(data)
-        datalist = data[1:513]
+        #datalist = data[1:513]
         #datalist = data[513:1025]
-        #datalist = data[1025: 1537]
+        datalist = data[1025: 1537]
         #print(datalist)
         dataall = dataall + datalist
     deal(dataall, i)

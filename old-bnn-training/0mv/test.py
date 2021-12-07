@@ -11,11 +11,11 @@ import pandas as pd
 
 def deal(listStr, i):
     # list转dataframe
-    column = '200L2Voltage';
+    column = '200L0Voltage';
     df = pd.DataFrame(listStr, columns=[column])
 
     # 保存到本地excel
-    IndexFile = '200L2Voltage'+'.xlsx'
+    IndexFile = 'offline-200L2Voltage'+'.xlsx'
     df.to_excel(IndexFile, index=False)
 
 
