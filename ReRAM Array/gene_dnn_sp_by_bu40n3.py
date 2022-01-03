@@ -8,7 +8,7 @@ import numpy as np
 # arrayR53 = np.random.normal(5.3, 0.1325, 5000000)
 # num53 = 0
 
-weight = np.load('weight_retrain15.npy', allow_pickle=True, encoding="latin1")
+weight = np.load('weight_512.npy', allow_pickle=True, encoding="latin1")
 neuron = []
 for i in range(len(weight)):
     neuron.append(np.sign(weight[i]))
