@@ -3,8 +3,8 @@
 ** Design library name: reram
 ** Design cell name: XORNET4
 ** Design view name: schematic
-.PARAM blinresistor=20
-.PARAM blresistor=30
+.PARAM blinresistor=2000
+.PARAM blresistor=3000
 
 .TRAN 10e-12 200e-9 START=0.0
 
@@ -3144,8 +3144,8 @@ r0 net09 bl r0
 .subckt SAVM2 bl blb dl vdd
 m1 dl net19 vdd vdd P L=180e-9 W=1e-6
 m0 net19 net19 vdd vdd P L=180e-9 W=1e-6
-m3 dl blb 0 0 N L=180e-9 W=1e-6
-m2 net19 bl 0 0 N L=180e-9 W=1e-6
+m3 dl blb 0 0 N L=500e-9 W=2e-6
+m2 net19 bl 0 0 N L=500e-9 W=2e-6
 .ends SAVM2
 ** End of subcircuit definition.
 
@@ -3164,14 +3164,14 @@ m0 out in g g N L=180e-9 W=2e-6
 .subckt CELLDREF bl sl wl wlb
 m1 sl wlb net13 net13 N L=180e-9 W=5e-6
 m0 sl wl net14 net14 N L=180e-9 W=5e-6
-r8 net018 bl 5e3
+r8 net018 bl 5.3e3
 r7 net13 net018 100e3
-r6 net14 net020 5e3
+r6 net14 net020 5.3e3
 r5 net020 bl 100e3
-r4 net017 bl 5e3
+r4 net017 bl 5.3e3
 r3 net019 bl 100e3
 r1 net13 net017 100e3
-r0 net14 net019 5e3
+r0 net14 net019 5.3e3
 .ends CELLDREF
 ** End of subcircuit definition.
 
