@@ -45,8 +45,8 @@ for i in range(1600):
     output_file.write(".subckt SAVM%d bl blb dl vdd\n" % (i + 2))
     output_file.write("m1 dl net19 vdd vdd P L=180e-9 W=1e-6\n")
     output_file.write("m0 net19 net19 vdd vdd P L=180e-9 W=1e-6\n")
-    output_file.write("m3 dl blb 0 0 N%d L=180e-9 W=1e-6\n" % (i + 1602))
-    output_file.write("m2 net19 bl 0 0 N%d L=180e-9 W=1e-6\n" % (i + 2))
+    output_file.write("m3 dl blb 0 0 N%d L=500e-9 W=3e-6\n" % (i + 1602))
+    output_file.write("m2 net19 bl 0 0 N%d L=500e-9 W=3e-6\n" % (i + 2))
     output_file.write(".ends SAVM%d\n" % (i + 2))
     output_file.write("\n")
 
