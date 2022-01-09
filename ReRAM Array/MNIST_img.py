@@ -123,9 +123,10 @@ x_test_t017 = np.delete(x_test_t017, 0, 0)
 #    plt.ylabel(7+1)
 #    plt.show()
 
-t = []
-for i in range(0, 9999):
-    t.append(i)
+print(y_test_t017[0])
+print(y_test_t017[11])
+print(y_test_t017[21])
+print(y_test_t017[41])
 
 
 
