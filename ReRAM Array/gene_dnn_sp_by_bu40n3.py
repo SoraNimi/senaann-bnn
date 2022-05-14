@@ -11,6 +11,7 @@ import numpy as np
 weight = np.load('weight_512.npy', allow_pickle=True, encoding="latin1")
 neuron = []
 for i in range(len(weight)):
+    print(weight[i])
     neuron.append(np.sign(weight[i]))
 print(neuron)
 # neuron = []

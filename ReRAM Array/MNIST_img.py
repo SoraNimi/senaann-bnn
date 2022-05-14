@@ -17,6 +17,9 @@ for loop in range(0, 1000):
         num = num + 1
         if num == 20:
             break
+
+print("--------")
+
 num = 0
 for loop in range(1001, 2000):
     if y_test[loop] == 1:
@@ -26,6 +29,9 @@ for loop in range(1001, 2000):
         num = num + 1
         if num == 20:
             break
+
+print("--------")
+
 
 num = 0
 for loop in range(2000, 3000):
@@ -37,6 +43,9 @@ for loop in range(2000, 3000):
         if num == 20:
             break
 
+print("--------")
+
+
 num = 0
 for loop in range(3000, 4000):
     if y_test[loop] == 3:
@@ -46,6 +55,10 @@ for loop in range(3000, 4000):
         num = num + 1
         if num == 20:
             break
+
+
+print("--------")
+
 
 num = 0
 for loop in range(4000, 5000):
@@ -57,6 +70,9 @@ for loop in range(4000, 5000):
         if num == 20:
             break
 
+print("--------")
+
+
 num = 0
 for loop in range(5000, 6000):
     if y_test[loop] == 5:
@@ -66,6 +82,9 @@ for loop in range(5000, 6000):
         num = num + 1
         if num == 20:
             break
+
+print("--------")
+
 
 num = 0
 for loop in range(6000, 7000):
@@ -77,6 +96,9 @@ for loop in range(6000, 7000):
         if num == 20:
             break
 
+print("--------")
+
+
 num = 0
 for loop in range(7000, 8000):
     if y_test[loop] == 7:
@@ -86,6 +108,9 @@ for loop in range(7000, 8000):
         num = num + 1
         if num == 20:
             break
+
+print("--------")
+
 
 num = 0
 for loop in range(8000, 9000):
@@ -97,6 +122,9 @@ for loop in range(8000, 9000):
         if num == 20:
             break
 
+print("--------")
+
+
 num = 0
 for loop in range(9000, 9999):
     if y_test[loop] == 9:
@@ -106,6 +134,9 @@ for loop in range(9000, 9999):
         num = num + 1
         if num == 20:
             break
+
+print("--------")
+
 
 x_test_t017 = np.delete(x_test_t017, 0, 0)
 
@@ -122,11 +153,6 @@ x_test_t017 = np.delete(x_test_t017, 0, 0)
 #    plt.xlabel(y_train_t017[9])
 #    plt.ylabel(7+1)
 #    plt.show()
-
-t = []
-for i in range(0, 9999):
-    t.append(i)
-
 
 
 print(x_test_t017[1])
