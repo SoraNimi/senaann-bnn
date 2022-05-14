@@ -144,7 +144,7 @@ score = model.evaluate(X_test, Y_test, verbose=0)
 print('Test score:', score[0])
 print('Test accuracy:', score[1])
 weight=model.get_weights()
-np.save('weight_retrain15.npy', weight)
+np.save('weight_offline.npy', weight)
 ################save weight
 #model.save_weights('m1024bias4''nol.h5')
 #model.save('m1024bias0nol.h5')

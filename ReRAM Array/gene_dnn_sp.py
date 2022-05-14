@@ -12,7 +12,7 @@ arrayR53 = np.round_(arrayR53, decimals= 5)
 
 num53 = 0
 
-weight = np.load('weight_retrain15.npy', allow_pickle=True, encoding="latin1")
+weight = np.load('weight_offline.npy', allow_pickle=True, encoding="latin1")
 neuron = []
 for i in range(len(weight)):
     neuron.append(np.sign(weight[i]))
