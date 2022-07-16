@@ -2,27 +2,27 @@ from pylab import *
 mpl.rcParams['font.sans-serif'] = ['SimHei']
 
 # ReRAM中改变
-x_axis_data = [0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2]
-y_axis_data = [96.3, 96, 97, 96.6, 98, 98, 98, 84]
+x_axis_data = [5, 10, 15, 20, 25, 30]
+y_axis_data = [40, 48, 70, 77.5, 75, 72]
 
 
 #co-design σ(bias1) = 40,σ(bias2) = 27
 # x_axis_data = [5, 10, 15, 20, 25, 30]
 # y_axis_data = [90.5, 77, 73.5, 48, 14, 19]
 
-#co-design σ(bias1)=60,σ(bias2 )=40     => σ(Vth) = 15mv
+#co-design σ(bias1)=60,σ(bias2 )=40     => σ(Vth) = bias15
 # x_axis_data = [5, 10, 15, 20, 25, 30]
 # y_axis_data = [88.5, 88.5, 76.5, 70, 50, 47.5]
 
-#co-design σ(bias1)=80,σ(bias2)=53     => σ(Vth) = 20mv
+#co-design σ(bias1)=80,σ(bias2)=53     => σ(Vth) = bias20
 # x_axis_data = [5, 10, 15, 20, 25, 30]
 # y_axis_data = [90.5, 90.5, 83, 77.5, 73.5, 44.5]
 
-#co-design σ(bias1) = 100, σ(bias2) = 67    => σ(Vth) = 25mv
+#co-design σ(bias1) = 100, σ(bias2) = 67    => σ(Vth) = bias25
 # x_axis_data = [5, 10, 15, 20, 25, 30]
 # y_axis_data = [86, 87, 83, 73, 67.5, 68]
 
-#co-design σ(bias1) = 120, σ(bias2) = 80   => σ(Vth) = 30mv
+#co-design σ(bias1) = 120, σ(bias2) = 80   => σ(Vth) = bias30
 # x_axis_data = [5, 10, 15, 20, 25, 30]
 # y_axis_data = [75.5, 75, 79.5, 76, 61, 58.5]
 
@@ -34,9 +34,9 @@ for x, y in zip(x_axis_data, y_axis_data):
 
 
 # 显示标签，如果不加这句，即使加了label='一些数字'的参数，最终还是不会显示标签
-plt.legend(loc="upper right")
-plt.xlabel('σRH*RH-σRL*RL')
+plt.legend(loc="best")
+plt.xlabel('σbias')
 plt.ylabel('Accuracy')
-
+plt.title('σVth = bias20')
 plt.show()
 # plt.savefig('demo.jpg')  # 保存该图片

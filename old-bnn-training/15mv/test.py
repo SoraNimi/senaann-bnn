@@ -15,7 +15,7 @@ def deal(listStr, i):
     df = pd.DataFrame(listStr, columns=[column])
 
     # 保存到本地excel
-    IndexFile = 'old-bnn-15mv-L0'+'.xlsx'
+    IndexFile = 'old-bnn-bias15-L0'+'.xlsx'
     df.to_excel(IndexFile, index=False)
 
 

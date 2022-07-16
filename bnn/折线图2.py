@@ -10,19 +10,19 @@ y_axis_data = [96.77, 94.779, 93.26, 94.069, 94.34, 93.58]
 # x_axis_data = [5, 10, 15, 20, 25, 30]
 # y_axis_data = [90.5, 77, 73.5, 48, 14, 19]
 
-#co-design σ(bias1)=60,σ(bias2 )=40     => σ(Vth) = 15mv
+#co-design σ(bias1)=60,σ(bias2 )=40     => σ(Vth) = bias15
 # x_axis_data = [5, 10, 15, 20, 25, 30]
 # y_axis_data = [88.5, 88.5, 76.5, 70, 50, 47.5]
 
-#co-design σ(bias1)=80,σ(bias2)=53     => σ(Vth) = 20mv
+#co-design σ(bias1)=80,σ(bias2)=53     => σ(Vth) = bias20
 # x_axis_data = [5, 10, 15, 20, 25, 30]
 # y_axis_data = [90.5, 90.5, 83, 77.5, 73.5, 44.5]
 
-#co-design σ(bias1) = 100, σ(bias2) = 67    => σ(Vth) = 25mv
+#co-design σ(bias1) = 100, σ(bias2) = 67    => σ(Vth) = bias25
 # x_axis_data = [5, 10, 15, 20, 25, 30]
 # y_axis_data = [86, 87, 83, 73, 67.5, 68]
 
-#co-design σ(bias1) = 120, σ(bias2) = 80   => σ(Vth) = 30mv
+#co-design σ(bias1) = 120, σ(bias2) = 80   => σ(Vth) = bias30
 # x_axis_data = [5, 10, 15, 20, 25, 30]
 # y_axis_data = [75.5, 75, 79.5, 76, 61, 58.5]
 
