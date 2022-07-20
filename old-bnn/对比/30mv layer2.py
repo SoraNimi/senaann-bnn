@@ -19,7 +19,7 @@ data = {
 }
 
 plt.figure(figsize=(10, 5))  # 设置画布的尺寸
-plt.title('σ = 30mv layer2', fontsize=20)  # 标题，并设定字号大小
+plt.title('σ(Vth) = 30mv layer2', fontsize=20)  # 标题，并设定字号大小
 plt.xlabel(u'(VDBL - ΔV, VDBL + ΔV)', fontsize=14)  # 设置x轴，并设定字号大小
 plt.ylabel(u'nums VBL for (VDBL - ΔV, VDBL + ΔV) / total', fontsize=14)  # 设置y轴，并设定字号大小
 

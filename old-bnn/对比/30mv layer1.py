@@ -1,4 +1,3 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 
 # 读取数据
@@ -19,8 +18,8 @@ data = {
 }
 
 plt.figure(figsize=(10, 5))  # 设置画布的尺寸
-plt.title('σ = 30mv layer1', fontsize=20)  # 标题，并设定字号大小
-plt.xlabel(u'(VDBL - ΔV, VDBL + ΔV)', fontsize=14)  # 设置x轴，并设定字号大小
+plt.title('σ(Vth) = 30mv layer1', fontsize=30)  # 标题，并设定字号大小
+plt.xlabel(u'(VDBL - ΔV, VDBL + ΔV)', fontsize=20)  # 设置x轴，并设定字号大小
 plt.ylabel(u'nums VBL for (VDBL - ΔV, VDBL + ΔV) / total', fontsize=14)  # 设置y轴，并设定字号大小
 
 # color：颜色，linewidth：线宽，linestyle：线条类型，label：图例，marker：数据点的类型
